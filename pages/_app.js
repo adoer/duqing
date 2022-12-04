@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="top-bar">
-        <h1 className="title">有感</h1>
+        <h1 className="title">有感 </h1>
         <div className="nav-line">
           <Link className="nav-link" href="/">有感</Link>
           <Link className="nav-link" href="/archive">有记</Link>
