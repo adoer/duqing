@@ -1,0 +1,107 @@
+@import "variables"
+
+html,
+body
+  padding: 0
+  margin: 0
+  font: 100% $font-stack
+  color: $primary-color
+  font-size: $primary-font-size
+  background-color: #fcfcfc
+  letter-spacing: .005em
+*
+  box-sizing: border-box
+  
+a
+  word-break: break-word
+  color: #5d676a
+  transition: opacity .2s ease
+  text-decoration-color: #a5adb1
+  text-underline-position: from-font
+  text-decoration-line: underline
+  text-decoration-thickness: from-font
+  &:hover
+    opacity: .7
+
+.nav-line
+  margin-bottom: 2rem
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-end
+  text-align: right
+  .nav-link
+    margin-left: 0.75rem
+    --tw-text-opacity: 1
+    color: rgb(75 85 99/var(--tw-text-opacity))
+    text-underline-offset: 1px
+
+@mixin clearfix()
+  &::after
+    display: block
+    clear: both
+    content: ""
+
+.clearfix
+  @include clearfix()
+
+@mixin layoutSize()
+  max-width: $primary-max-width
+  margin-left: auto
+  margin-right: auto
+
+header
+  @include layoutSize()
+  padding-top: 5rem
+
+article
+  @include layoutSize()
+  line-height: 1.6
+  word-spacing: -0.04em
+  display: block
+
+footer
+  @include layoutSize()
+  padding-bottom: 8rem
+  hr
+    background: #e5e7eb
+    margin-top: 3em
+    margin-bottom: 3em
+    height: 1px
+    border: none
+  .separator
+    margin: 0 .4em
+  small
+    display: block
+    margin-top: 8rem
+
+h1.title
+  font-size: 1.6em
+  margin-bottom: 0.4em
+  margin-top: 0
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+/*当屏幕尺寸大于576px时，应用下面的CSS样式*/
+// Small devices (landscape phones, 576px and up)
+/* @media (max-width: 576px)
+ .xs
+ display: block */
+@media (min-width: 576px)
+  .sm
+    display: block
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px)
+  .md
+    display: block
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px)
+  .lg
+    display: block
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px)
+  .xl
+    display: block

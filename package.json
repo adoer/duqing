@@ -1,0 +1,32 @@
+{
+  "name": "duqing",
+  "version": "1.0.0",
+  "description": "duqing site",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adoer/duqing.git"
+  },
+  "author": "duqing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adoer/duqing/issues"
+  },
+  "homepage": "https://github.com/adoer/duqing#readme",
+  "dependencies": {
+    "mongoose": "^6.0.11",
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.4",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-highlight": "^6.0.0",
+    "remark-gfm": "^3.0.1",
+    "swr": "^1.0.1"
+  }
+}
