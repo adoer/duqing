@@ -72,7 +72,7 @@ function MyApp({ Component, pageProps }) {
         <hr />
         <a href="https://github.com/adoer" target="_blank">Github</a>
         <span className="separator">·</span>
-        <a href="mailto:g@duqing.ink" target="_blank">i@duqing.ink</a>
+        <a href="mailto:i@duqing.ink" target="_blank">i@duqing.ink</a>
         <small>
           <time>2022</time>  © Du Qing.
         </small>
