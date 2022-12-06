@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
-/* InfoSchema will correspond to a collection in your MongoDB database. */
-const InfoSchema = new mongoose.Schema({
+/* thoughtschema will correspond to a collection in your MongoDB database. */
+const thoughtschema = new mongoose.Schema({
   name: {
     /* The name of this pet */
     type: String,
@@ -21,4 +21,4 @@ const InfoSchema = new mongoose.Schema({
   },
 })
 
-export default mongoose.models.Info || mongoose.model('Info', InfoSchema)
+export default mongoose.models.thoughts || mongoose.model('thoughts', thoughtschema)

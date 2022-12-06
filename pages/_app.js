@@ -1,9 +1,42 @@
-// import '../styles/globals.css';
-// import "../styles/test.css"
+import "../styles/global.sass"
 import Head from "next/head"
 import Link from 'next/link'
-import "../styles/global.sass"
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react';
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+
+  const navRenderData = [
+    {
+      path: "/",
+      title: "有感",
+    },
+    {
+      path: "/archive",
+      title: "有记"
+    },
+    {
+      path: "/interesting",
+      title: "有趣"
+    },
+    {
+      path: "/about",
+      title: "有我"
+    },
+  ]
+
+  function navClick(e) {
+    console.log(e);
+  }
+  function titleClick(e) {
+    console.log(router);
+  }
+  const [pageTitle, setPageTitle] = useState("")
+
+  useEffect(() => {
+    setPageTitle(router.query.title || "有感");
+  });
+
   return (
     <>
       <Head>
@@ -11,14 +44,26 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="duqing site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="top-bar">
-        <h1 className="title">有感 </h1>
-        <div className="nav-line">
-          <Link className="nav-link" href="/">有感</Link>
-          <Link className="nav-link" href="/archive">有记</Link>
-          <Link className="nav-link" href="/interesting">有趣</Link>
-          <Link className="nav-link" href="/about">有我</Link>
-        </div>
+      <header>
+        <h1 className="title" onClick={titleClick}>{pageTitle}</h1>
+        {
+          navRenderData.some(val => val.path === router.pathname) && <div className="nav-line">
+            {
+              navRenderData.map(el => {
+                return router.pathname === el.path ?
+                  <span key={el.title} className="nav-link">{el.title}</span> :
+                  <Link key={el.title}
+                    className="nav-link"
+                    as={el.path}
+                    href={{
+                      pathname: el.path,
+                      query: { title: el.title },
+                    }}>{el.title}
+                  </Link>
+              })
+            }
+          </div>
+        }
       </header>
       <article className="article">
         <Component {...pageProps} />
