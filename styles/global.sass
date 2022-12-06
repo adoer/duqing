@@ -86,6 +86,7 @@ article
 footer
   @include layoutSize()
   padding-bottom: 8rem
+  overflow: hidden
   hr
     background: #e5e7eb
     margin-top: 3rem
@@ -97,6 +98,12 @@ footer
   small
     display: block
     margin-top: 8rem
+
+@media (max-width: 480px)
+  header
+    padding-top: 2rem
+  footer
+    padding-bottom: 4rem
 
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
