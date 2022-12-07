@@ -16,7 +16,7 @@ const PostView = ({ content, date }) => {
     </>
   )
 }
-export async function getStaticPaths() {
+/* export async function getStaticPaths() {
   await dbConnect()
   const result = await Thoughts.find({})
   const paths = result.map((doc) => {
@@ -28,10 +28,10 @@ export async function getStaticPaths() {
     paths: paths,
     fallback: false // See the "fallback" section below
   };
-}
+} */
 
 /* Retrieves thoughts data from mongodb database getServerSideProps*/
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   await dbConnect()
   const result = await Thoughts.findById(params.id).lean()
   const { content, date } = result
