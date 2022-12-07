@@ -1,8 +1,10 @@
 import "../styles/global.sass"
+import "NProgress/nprogress.css"
 import Head from "next/head"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
+import NProgress from "NProgress"
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
@@ -29,7 +31,7 @@ function MyApp({ Component, pageProps }) {
     console.log(e);
   }
   function titleClick(e) {
-    console.log(router);
+    NProgress.start()
   }
   const [pageTitle, setPageTitle] = useState("")
 
@@ -40,7 +42,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>duqing</title>
+        <title>Du Qing</title>
         <meta name="description" content="duqing site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -75,6 +77,7 @@ function MyApp({ Component, pageProps }) {
         <a href="mailto:i@duqing.ink" target="_blank">i@duqing.ink</a>
         <small>
           <time>2022</time>  © Du Qing.
+          <a href="../public/feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
         </small>
       </footer>
     </>

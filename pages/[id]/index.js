@@ -2,9 +2,8 @@ import { useRouter } from 'next/router'
 import HtmlRender from '../../components/HtmlRender'
 import dbConnect from '../../lib/dbConnect'
 import Thoughts from '../../models/Info'
-import testNode from '../../models/testNode'
 import Link from 'next/link'
-const PostView = ({ content, date, test }) => {
+const PostView = ({ content, date }) => {
   const router = useRouter()
   const query = router.query
   return (
@@ -13,19 +12,27 @@ const PostView = ({ content, date, test }) => {
         <div className="meta"><time>{query.date || date}</time></div>
         <Link className="back" href="/">返回</Link>
       </div>
-      {test}
       {content && <HtmlRender html={content} />}
     </>
   )
 }
-
-/* Retrieves thoughts data from mongodb database */
-export async function getServerSideProps({ params }) {
-  const test = await testNode()
-
+export async function getStaticPaths() {
   await dbConnect()
+  const result = await Thoughts.find({})
+  const paths = result.map((doc) => {
+    const curInfo = doc.toObject()
+    curInfo._id = curInfo._id.toString()
+    return { params: { id: curInfo._id } }
+  })
+  return {
+    paths: paths,
+    fallback: false // See the "fallback" section below
+  };
+}
 
-  /* find all the data in our database */
+/* Retrieves thoughts data from mongodb database getServerSideProps*/
+export async function getStaticProps({ params }) {
+  await dbConnect()
   const result = await Thoughts.findById(params.id).lean()
   const { content, date } = result
   /* const content = result.map((doc) => {
@@ -33,7 +40,7 @@ export async function getServerSideProps({ params }) {
     curInfo._id = curInfo._id.toString()
     return curInfo
   }) */
-  return { props: { content, date, test } }
+  return { props: { content, date } }
 }
 
 export default PostView

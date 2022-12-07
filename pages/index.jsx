@@ -9,7 +9,7 @@ const Home = function ({ thoughts }) {
   )
 }
 
-/* Retrieves thoughts data from mongodb database */
+/* Retrieves thoughts data from mongodb database getStaticProps*/
 export async function getStaticProps() {
   await dbConnect()
 
@@ -20,7 +20,7 @@ export async function getStaticProps() {
     curInfo._id = curInfo._id.toString()
     return curInfo
   })
-  return { props: { thoughts: thoughts } }
+  return { props: { thoughts } }
 }
 
 
