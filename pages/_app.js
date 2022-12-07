@@ -1,10 +1,10 @@
 import "../styles/global.sass"
-import "NProgress/nprogress.css"
+// import "NProgress/nprogress.css" 这样引入vercerl deploy时会报错
 import Head from "next/head"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-import NProgress from "NProgress"
+// import NProgress from "NProgress"
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
     console.log(e);
   }
   function titleClick(e) {
-    NProgress.start()
+    // NProgress.start()
   }
   const [pageTitle, setPageTitle] = useState("")
 
