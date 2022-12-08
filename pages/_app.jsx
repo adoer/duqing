@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 // import NProgress from "NProgress"
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
-
   const navRenderData = [
     {
       path: "/",

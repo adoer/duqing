@@ -2,12 +2,12 @@ import ReactMarkdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import remarkGfm from 'remark-gfm'
-import HtmlRenderStyle from "./HtmlRender.module.sass"
-const HtmlRender = ({ html, className }) => {
+import mdRenderStyle from "./MdRender.module.sass"
+const mdRender = ({ mdStr, className }) => {
   return <ReactMarkdown
-    className={HtmlRenderStyle.codeblock}
+    className={mdRenderStyle.codeblock}
     remarkPlugins={[rehypeHighlight, [remarkGfm, { singleTilde: false }]]}
-    children={html}
+    children={mdStr}
     components={{
       code({ node, inline, className, children, ...props }) {
         const match = /language-(\w+)/.exec(className || '')
@@ -21,7 +21,7 @@ const HtmlRender = ({ html, className }) => {
             {...props}
           />
         ) : (
-          <code className={HtmlRenderStyle["primary-code"]} {...props}>
+          <code className={mdRenderStyle["primary-code"]} {...props}>
             {children}
           </code>
         )
@@ -29,4 +29,4 @@ const HtmlRender = ({ html, className }) => {
     }}
   />
 }
-export default HtmlRender;
+export default mdRender;

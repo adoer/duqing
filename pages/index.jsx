@@ -1,5 +1,5 @@
 import dbConnect from '../lib/dbConnect'
-import Info from '../models/Info'
+import Thoughts from '../models/Thoughts'
 import PostList from '../components/PostList'
 const Home = function ({ thoughts }) {
   return (
@@ -14,7 +14,7 @@ export async function getStaticProps() {
   await dbConnect()
 
   /* find all the data in our database */
-  const result = await Info.find({}, { title: 1, date: 1 })
+  const result = await Thoughts.find({}, { title: 1, date: 1 })
   const thoughts = result.map((doc) => {
     const curInfo = doc.toObject()
     curInfo._id = curInfo._id.toString()
