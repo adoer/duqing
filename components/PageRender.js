@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import MdRender from './MdRender'
 import Skeleton from './Skeleton'
 import useSWR from 'swr'
-import { useEffect, useState } from 'react'
 
 const fetcher = (url) =>
   fetch(url)

@@ -12,25 +12,22 @@ function MyApp({ Component, pageProps }) {
       path: "/",
       title: "有感",
     },
+    // {
+    //   path: "/archive",
+    //   title: "有记"
+    // },
     {
-      path: "/archive",
-      title: "有记"
-    },
-    {
-      path: "/interesting",
-      title: "有趣"
+      path: "/xerduo",
+      title: "小耳朵"
     },
     {
       path: "/about",
-      title: "有我"
+      title: "我"
     },
   ]
 
-  function navClick(e) {
-    console.log(e);
-  }
   function titleClick(e) {
-    // NProgress.start()
+    router.push('/')
   }
   const [pageTitle, setPageTitle] = useState("")
 
