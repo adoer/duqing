@@ -1,13 +1,15 @@
 import { useRouter } from 'next/router'
 import MdRender from './MdRender'
+import Skeleton from './Skeleton'
 import useSWR from 'swr'
+import { useEffect, useState } from 'react'
 
 const fetcher = (url) =>
   fetch(url)
     .then((res) => res.json())
     .then((json) => json.data)
 
-const PostView = ({ callBack }) => {
+const PageRender = ({ callBack }) => {
   const router = useRouter()
   const { id } = router.query
   const { data: thought, error } = useSWR(id ? `/api/thoughts/${id}` : null, fetcher)
@@ -17,8 +19,10 @@ const PostView = ({ callBack }) => {
 
   callBack(thought.date)
 
+
   return (
     <>
+      <Skeleton></Skeleton>
       <MdRender mdStr={thought.content}></MdRender>
     </>
   )
@@ -52,4 +56,4 @@ const PostView = ({ callBack }) => {
 //   return { props: { content, date } }
 // }
 
-export default PostView
+export default PageRender

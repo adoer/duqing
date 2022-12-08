@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   const [pageTitle, setPageTitle] = useState("")
 
   useEffect(() => {
-    setPageTitle(router.query.title || "有感");
+    setPageTitle(router.query.title || "有感", [pageTitle]);
   });
 
   return (

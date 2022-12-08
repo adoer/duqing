@@ -1,17 +1,26 @@
-import { useRouter } from 'next/router'
 import PageRender from '../../components/PageRender'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 const PostView = () => {
-  const [date, setDate] = useState('')
+  // const [date, setDate] = useState('', 'key1')
+  const inputEl = useRef(null);
+  /* useEffect(() => {
+    function getEvent(val) {
+      setDate(val)
+    }
+  }, []); */
+
   function getEvent(val) {
-    setDate(val)
+    if (inputEl.current) {
+      inputEl.current.innerText = val
+    }
   }
+
 
   return (
     <>
       <div className='meta-line'>
-        <div className="meta"><time>{date}</time></div>
+        <div className="meta"><time ref={inputEl}></time></div>
         <Link className="back" href="/">返回</Link>
       </div>
       <PageRender callBack={getEvent}></PageRender>
