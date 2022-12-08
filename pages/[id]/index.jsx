@@ -21,7 +21,7 @@ const PostView = () => {
     <>
       <div className='meta-line'>
         <div className="meta"><time ref={inputEl}></time></div>
-        <Link className="back" href="/">返回</Link>
+        <Link className="back" href="/">Back</Link>
       </div>
       <PageRender callBack={getEvent}></PageRender>
     </>
