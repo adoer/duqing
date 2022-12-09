@@ -17,12 +17,16 @@ function MyApp({ Component, pageProps }) {
     //   title: "有记"
     // },
     {
-      path: "/xerduo",
-      title: "小耳朵"
+      path: "/interesting",
+      title: "有趣"
     },
+    // {
+    //   path: "/xerduo",
+    //   title: "小耳朵"
+    // },
     {
       path: "/about",
-      title: "我"
+      title: "关于"
     },
   ]
 
@@ -71,6 +75,8 @@ function MyApp({ Component, pageProps }) {
         <a href="https://github.com/adoer" target="_blank">Github</a>
         <span className="separator">·</span>
         <a href="mailto:i@duqing.ink" target="_blank">i@duqing.ink</a>
+        <span className="separator">·</span>
+        <a href="xerduo.com" target="_blank">xerduo.com</a>
         <small>
           <time>2022</time>  © Du Qing.
           <a href="../public/feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
