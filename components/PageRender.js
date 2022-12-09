@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import MdRender from './MdRender'
-import Skeleton from './Skeleton'
 import useSWR from 'swr'
+import { Skeleton } from 'antd';
 
 const fetcher = (url) =>
   fetch(url)
@@ -13,15 +13,14 @@ const PageRender = ({ callBack }) => {
   const { id } = router.query
   const { data: thought, error } = useSWR(id ? `/api/thoughts/${id}` : null, fetcher)
 
-  if (error) return <p>Failed to load</p>
-  if (!thought) return <p>Loading...</p>
+  if (error) return <p>数据获取异常，访问其它页面吧。</p>
+  if (!thought) return <Skeleton paragraph={{ rows: 4 }} active />
 
   callBack(thought.date)
 
 
   return (
     <>
-      <Skeleton></Skeleton>
       <MdRender mdStr={thought.content}></MdRender>
     </>
   )
