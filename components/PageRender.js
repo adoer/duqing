@@ -6,13 +6,13 @@ import { useDispatch } from 'react-redux'
 import {
   updateDate,
 } from './dateSlice'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 const fetcher = (url) =>
   fetch(url)
     .then((res) => res.json())
     .then((json) => json.data)
 
-const PageRender = ({ callBack }) => {
+const PageRender = () => {
   const router = useRouter()
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true)
@@ -31,7 +31,6 @@ const PageRender = ({ callBack }) => {
     } else {
       setIsLoading(false)
       dispatch(updateDate(thought.date))
-      // callBack(thought && thought.date)
     }
   })
 
