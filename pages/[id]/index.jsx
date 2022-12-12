@@ -1,26 +1,31 @@
 import PageRender from '../../components/PageRender'
 import Link from 'next/link'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+  updateDate,
+  selectDate
+} from '../../components/dateSlice'
 import { useEffect, useState, useRef } from 'react'
 const PostView = () => {
   // const [date, setDate] = useState('', 'key1')
   const inputEl = useRef(null);
-  /* useEffect(() => {
-    function getEvent(val) {
-      setDate(val)
-    }
-  }, []); */
+
+  const date = useSelector(selectDate);
+  const dispatch = useDispatch()
+
 
   function getEvent(val) {
-    if (inputEl.current) {
-      inputEl.current.innerText = val
-    }
+    // if (inputEl.current) {
+    //   inputEl.current.innerText = val
+    // }
+    dispatch(updateDate(val))
   }
-
 
   return (
     <>
       <div className='meta-line'>
-        <div className="meta"><time ref={inputEl}></time></div>
+        {/* <div className="meta"><time ref={inputEl}></time></div> */}
+        <div className="meta"><time>{date}</time></div>
         <Link className="back" href="/">Back</Link>
       </div>
       <PageRender callBack={getEvent}></PageRender>

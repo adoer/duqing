@@ -1,10 +1,11 @@
 import "../styles/global.sass"
-// import "NProgress/nprogress.css" 这样引入vercerl deploy时会报错
+import store from '../store/store';
+import { Provider } from 'react-redux';
 import Head from "next/head"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-// import NProgress from "NProgress"
+import { Counter } from '../components/Counter';
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const navRenderData = [
@@ -40,7 +41,7 @@ function MyApp({ Component, pageProps }) {
   });
 
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>Du Qing</title>
         <meta name="description" content="duqing site" />
@@ -82,7 +83,7 @@ function MyApp({ Component, pageProps }) {
           <a href="../public/feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
         </small>
       </footer>
-    </>
+    </Provider>
   )
 }
 

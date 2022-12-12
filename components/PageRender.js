@@ -1,8 +1,12 @@
 import { useRouter } from 'next/router'
 import MdRender from './MdRender'
 import useSWR from 'swr'
-import { Skeleton } from 'antd';
-
+import { Skeleton } from 'antd'
+import { useDispatch } from 'react-redux'
+import {
+  updateDate,
+} from './dateSlice'
+import { useEffect, useState, useRef } from 'react'
 const fetcher = (url) =>
   fetch(url)
     .then((res) => res.json())
@@ -10,18 +14,35 @@ const fetcher = (url) =>
 
 const PageRender = ({ callBack }) => {
   const router = useRouter()
+  const dispatch = useDispatch()
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
   const { id } = router.query
   const { data: thought, error } = useSWR(id ? `/api/thoughts/${id}` : null, fetcher)
 
-  if (error) return <p>数据获取异常，访问其它页面吧。</p>
-  if (!thought) return <Skeleton paragraph={{ rows: 4 }} active />
+  // if (error) return <p>数据获取异常，访问其它页面吧。</p>
+  // if (!thought) return <Skeleton paragraph={{ rows: 4 }} active />
 
-  callBack(thought.date)
-
+  useEffect(() => {
+    if (error) {
+      setIsError(true)
+    } else if (!thought) {
+      setIsLoading(true)
+    } else {
+      setIsLoading(false)
+      dispatch(updateDate(thought.date))
+      // callBack(thought && thought.date)
+    }
+  })
 
   return (
     <>
-      <MdRender mdStr={thought.content}></MdRender>
+      {
+        isError ? <p> 数据获取异常，访问其它页面吧。</p > :
+          isLoading ? <Skeleton paragraph={{ rows: 4 }} active /> :
+            <MdRender mdStr={thought && thought.content}></MdRender>
+      }
+
     </>
   )
 }
