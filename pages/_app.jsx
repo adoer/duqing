@@ -77,7 +77,7 @@ function MyApp({ Component, pageProps }) {
         <span className="separator">·</span>
         <a href="mailto:i@duqing.ink" target="_blank">i@duqing.ink</a>
         <span className="separator">·</span>
-        <a href="xerduo.com" target="_blank">xerduo.com</a>
+        <a href="https://xerduo.com" target="_blank">xerduo.com</a>
         <small>
           <time>2022</time>  © Du Qing.
           <a href="../public/feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
