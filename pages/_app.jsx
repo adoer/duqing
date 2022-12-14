@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }) {
         <a href="https://xerduo.com" target="_blank">xerduo.com</a>
         <small>
           <time>2022</time>  © Du Qing.
-          <a href="../public/feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
+          <a href="./feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
         </small>
       </footer>
     </Provider>
