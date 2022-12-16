@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run g && next dev",
     "g": "node ./lib/staticDB/handleMd.js",
-    "build": "npm run g && next build",
+    "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
