@@ -4,7 +4,7 @@
   "description": "duqing site",
   "scripts": {
     "dev": "npm run g && next dev",
-    "g": "node ./lib/staticDB/handleMd.js",
+    "g": "node ./lib/staticDB/buildData.js",
     "build": "next build",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"

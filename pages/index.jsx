@@ -1,13 +1,8 @@
 import posts from '../lib/staticDB/noContent.json'
 // import Thoughts from '../models/Thoughts'
 import PostList from '../components/PostList'
-// import useSWR from 'swr'
-/* const fetcher = (url) =>
-  fetch(url)
-    .then((res) => res.json())
-    .then((json) => json.data) */
+
 const Home = function ({ thoughts }) {
-  // const { data, error } = useSWR(`/api/posts/getDir`, fetcher)
   return (
     <>
       {/* {data && <PostList data={data}></PostList>} */}
