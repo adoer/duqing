@@ -18,7 +18,10 @@ const PageRender = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
   const { id } = router.query
-  const { data: thought, error } = useSWR(id ? `/api/posts/${id}` : null, fetcher)
+  const { data: thought, error } = useSWR(id ? `/api/thoughts/${id}` : null, fetcher)
+
+  // if (error) return <p>数据获取异常，访问其它页面吧。</p>
+  // if (!thought) return <Skeleton paragraph={{ rows: 4 }} active />
 
   useEffect(() => {
     if (error) {

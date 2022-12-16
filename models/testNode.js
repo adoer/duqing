@@ -1,8 +1,8 @@
 const path = require('path')
-import { readdir } from 'fs'
+const { readdir } = require("fs")
 const testNode = async () => {
   // console.log(__dirname)
-  // const tPath = path.join(__dirname, '../public')
+  // const tPath = path.join(__dirname, './data')
   // console.log(__dirname, tPath)
   return new Promise((resolve, reject) => {
     readdir(__dirname, function (err, data) {
@@ -12,4 +12,6 @@ const testNode = async () => {
   })
 }
 
-export default testNode
+testNode().then((val) => console.log(val))
+
+// export default testNode
