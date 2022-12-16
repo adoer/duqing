@@ -1,19 +1,25 @@
-// import dbConnect from '../lib/dbConnect'
+import posts from '../lib/staticDB/noContent.json'
 // import Thoughts from '../models/Thoughts'
 import PostList from '../components/PostList'
-import useSWR from 'swr'
-const fetcher = (url) =>
+// import useSWR from 'swr'
+/* const fetcher = (url) =>
   fetch(url)
     .then((res) => res.json())
-    .then((json) => json.data)
+    .then((json) => json.data) */
 const Home = function ({ thoughts }) {
-  const { data, error } = useSWR(`/api/posts/getDir`, fetcher)
-  console.log(data)
+  // const { data, error } = useSWR(`/api/posts/getDir`, fetcher)
   return (
     <>
-      {data && <PostList data={data}></PostList>}
+      {/* {data && <PostList data={data}></PostList>} */}
+      <PostList data={thoughts}></PostList>
     </>
   )
+}
+
+/* Retrieves thoughts data from mongodb database getStaticProps*/
+export async function getStaticProps() {
+
+  return { props: { thoughts: posts } }
 }
 
 /* Retrieves thoughts data from mongodb database getStaticProps*/
