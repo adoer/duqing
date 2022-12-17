@@ -1,14 +1,12 @@
 import PageRender from '../../components/PageRender'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
-import {
-  selectDate
-} from '../../components/dateSlice'
+import { selectDate } from '../../components/dateSlice'
 // import { useEffect, useState, useRef } from 'react'
 const PostView = () => {
   // const inputEl = useRef(null)
 
-  const date = useSelector(selectDate);
+  const date = useSelector(selectDate)
 
   return (
     <>
@@ -31,7 +29,7 @@ const PostView = () => {
   return {
     paths: paths,
     fallback: false // See the "fallback" section below
-  };
+  }
 } */
 
 /* Retrieves thoughts data from mongodb database getServerSideProps*/

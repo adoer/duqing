@@ -1,11 +1,12 @@
 import "../styles/global.sass"
-import store from '../store/store';
-import { Provider } from 'react-redux';
+import store from '../store/store'
+import { Provider } from 'react-redux'
 import Head from "next/head"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react';
-import { Counter } from '../components/Counter';
+import { useEffect, useState } from 'react'
+// import { Counter } from '../components/Counter'
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const navRenderData = [
@@ -37,8 +38,8 @@ function MyApp({ Component, pageProps }) {
   const [pageTitle, setPageTitle] = useState("")
 
   useEffect(() => {
-    setPageTitle(router.query.title || "有感", [pageTitle]);
-  });
+    setPageTitle(router.query.title || "有感", [pageTitle])
+  })
 
   return (
     <Provider store={store}>
