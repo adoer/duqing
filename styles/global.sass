@@ -87,7 +87,15 @@ article
   display: block
   a
     word-break: break-word
-
+.pageWrap
+  position: relative
+.MdDir
+  position: absolute
+  right: -180px
+  width: 138px
+  top: 0
+  a
+    text-decoration: none
 footer
   @include layoutSize()
   padding-bottom: 8rem
@@ -107,6 +115,10 @@ footer
 #aboutme
   code
     color: #888888 !important
+
+@media (max-width: 1024px)
+  .MdDir
+    display: none
 
 @media (max-width: 480px)
   header

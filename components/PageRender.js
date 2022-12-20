@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import MdRender from './MdRender'
+import MdDir from './MdDir'
 import useSWR from 'swr'
 import { Skeleton } from 'antd'
 import { useDispatch } from 'react-redux'
@@ -36,7 +37,10 @@ const PageRender = () => {
       {
         isError ? <p> 数据获取异常，访问其它页面吧。</p > :
           isLoading ? <Skeleton paragraph={{ rows: 4 }} active /> :
-            <MdRender mdStr={thought && thought.content}></MdRender>
+            <div className='pageWrap'>
+              <MdRender mdStr={thought && thought.content} />
+              <MdDir dir={thought.dir} />
+            </div>
       }
 
     </>
