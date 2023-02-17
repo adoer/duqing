@@ -4,7 +4,7 @@ const lab = function () {
     {
       title: 'xerduo',
       herf: 'https://xerduo.com',
-      des: 'A blog base on hexo',
+      des: 'A blog base on Hexo',
     },
     {
       title: 'Tetris',
@@ -19,7 +19,7 @@ const lab = function () {
     {
       title: 'ImgUpload',
       herf: 'https://imgupload.duqing.ink',
-      des: 'Image upload with image cropping features',
+      des: 'Cropping image',
     },
   ]
   return (

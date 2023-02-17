@@ -42,7 +42,17 @@ function MyApp({ Component, pageProps }) {
   const [pageTitle, setPageTitle] = useState("")
 
   useEffect(() => {
-    setPageTitle(router.query.title || "Thoughts", [pageTitle])
+    let title = router.query.title
+    if (!title) {
+      // const obj = navRenderData.find(el => location.pathname === el.path)
+      title = location.pathname
+      if (title === '/') {
+        title = navRenderData[0].title
+      } else {
+        title = title.substring(1, 2).toLocaleUpperCase() + title.substring(2)
+      }
+    }
+    setPageTitle(title, [pageTitle])
   })
 
   return (
@@ -53,7 +63,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <h1 className="title" onClick={titleClick}>{pageTitle}</h1>
+        <h1 alt="Back home" className="title" onClick={titleClick}>{pageTitle}</h1>
         {
           navRenderData.some(val => val.path === router.pathname) && <div className="nav-line">
             {
