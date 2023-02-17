@@ -8,7 +8,7 @@
         <lastBuildDate>2023-02-16</lastBuildDate>
         <atom:link href="https://duqing.ink/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-          <title><![CDATA[markdown]]></title>
+          <title><![CDATA[Markdown]]></title>
           <description>
             <![CDATA[## A demo
 
@@ -73,8 +73,8 @@ A note[^1]
 * [ ] to do
 * [x] done]]>
           </description>
-          <link>/markdown</link>
-          <guid isPermaLink="true">/markdown</guid>
+          <link>/Markdown</link>
+          <guid isPermaLink="true">/Markdown</guid>
           <dc:creator><![CDATA[Du]]></dc:creator>
           <pubDate>2022-07-11</pubDate>
         </item><item>
