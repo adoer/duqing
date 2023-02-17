@@ -1,6 +1,6 @@
 import posts from '../lib/staticDB/noContent.json'
 // import Thoughts from '../models/Thoughts'
-import PostList from '../components/PostList'
+import PostList from '../components/postList/PostList'
 
 const Home = function ({ thoughts }) {
   return (

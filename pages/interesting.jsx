@@ -1,4 +1,4 @@
-import ImgList from '../components/ImgList.tsx'
+import ImgList from '../components/imgList/ImgList.tsx'
 const data = []
 const Interesting = function () {
   return (

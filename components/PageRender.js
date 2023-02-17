@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import MdRender from './MdRender'
+import MdRender from './mdRender/MdRender'
 import MdDir from './MdDir'
 import useSWR from 'swr'
 import { Skeleton } from 'antd'

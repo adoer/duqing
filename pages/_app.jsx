@@ -27,6 +27,10 @@ function MyApp({ Component, pageProps }) {
     //   title: "小耳朵"
     // },
     {
+      path: "/lab",
+      title: "Lab"
+    },
+    {
       path: "/about",
       title: "About"
     },
