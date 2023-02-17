@@ -1,4 +1,4 @@
-import MdRender from '../components/MdRender'
+import MdRender from '../components/mdRender/MdRender'
 const str = `\`\`\`html
 {
   "name": "Du Qing",
