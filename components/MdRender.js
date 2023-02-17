@@ -29,6 +29,7 @@ const mdRender = ({ mdStr }) => {
           </code>
         )
       },
+      a: ({ node, ...props }) => <a target="_blank" {...props} />,
       h1: ({ node, ...props }) => <h1 id={node.children[0].value} {...props} />,
       h2: ({ node, ...props }) => <h2 id={node.children[0].value} {...props} />,
       h3: ({ node, ...props }) => <h3 id={node.children[0].value} {...props} />,

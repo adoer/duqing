@@ -26,6 +26,7 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-grid-gallery": "^1.0.0",
     "react-markdown": "^8.0.4",
     "react-redux": "^8.0.5",
     "react-syntax-highlighter": "^15.5.0",
@@ -33,6 +34,10 @@
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "remark-toc": "^8.0.1",
-    "swr": "^1.0.1"
+    "swr": "^1.0.1",
+    "yet-another-react-lightbox": "^2.3.1"
+  },
+  "devDependencies": {
+    "typescript": "4.9.5"
   }
 }

@@ -35,7 +35,7 @@ const PageRender = () => {
   return (
     <>
       {
-        isError ? <p> 数据获取异常，访问其它页面吧。</p > :
+        isError ? <p> 404 Page Not Found 。</p > :
           isLoading ? <Skeleton paragraph={{ rows: 4 }} active /> :
             <div className='pageWrap'>
               <MdRender mdStr={thought && thought.content} />

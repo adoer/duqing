@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   const navRenderData = [
     {
       path: "/",
-      title: "有感",
+      title: "Thoughts",
     },
     // {
     //   path: "/archive",
@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
     // },
     {
       path: "/interesting",
-      title: "有趣"
+      title: "Interesting"
     },
     // {
     //   path: "/xerduo",
@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
     // },
     {
       path: "/about",
-      title: "关于"
+      title: "About"
     },
   ]
 
@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
   const [pageTitle, setPageTitle] = useState("")
 
   useEffect(() => {
-    setPageTitle(router.query.title || "有感", [pageTitle])
+    setPageTitle(router.query.title || "Thoughts", [pageTitle])
   })
 
   return (

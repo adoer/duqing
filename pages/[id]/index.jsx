@@ -12,7 +12,12 @@ const PostView = () => {
     <>
       <div className='meta-line'>
         <div className="meta"><time>{date}</time></div>
-        <Link className="back" href="/">Back</Link>
+        <Link className="back" href="/">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24">
+            <path fill="none" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 13L5 9l4-4M5 9h11a4 4 0 0 1 0 8h-1" />
+          </svg>
+        </Link>
       </div>
       <PageRender />
     </>

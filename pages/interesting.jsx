@@ -1,7 +1,9 @@
+import ImgList from '../components/ImgList.tsx'
+const data = []
 const Interesting = function () {
   return (
     <>
-      interesting
+      <ImgList data={data}></ImgList>
     </>
   )
 }
