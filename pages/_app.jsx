@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   const navRenderData = [
     {
       path: "/",
-      title: "Thoughts",
+      title: "Essay",
     },
     // {
     //   path: "/archive",
