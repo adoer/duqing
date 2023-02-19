@@ -9,7 +9,7 @@ const lab = function () {
     {
       title: 'Tetris',
       herf: 'https://tetris.duqing.ink',
-      des: 'Tetris AI game 🎮',
+      des: 'Tetris game with AI 🎮',
     },
     {
       title: 'BPM design editor',
