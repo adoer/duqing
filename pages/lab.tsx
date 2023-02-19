@@ -14,7 +14,12 @@ const lab = function () {
     {
       title: 'BPM design editor',
       herf: 'https://bpm.duqing.ink',
-      des: 'A BPM design editor',
+      des: 'Design editor for BPM',
+    },
+    {
+      title: 'Auto-i18n',
+      herf: 'https://github.com/adoer/auto-i18n',
+      des: 'A tool for vue-i18n use',
     },
     {
       title: 'ImgUpload',
