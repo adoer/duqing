@@ -19,8 +19,8 @@ function MyApp({ Component, pageProps }) {
     //   title: "有记"
     // },
     {
-      path: "/interesting",
-      title: "Interesting"
+      path: "/fun",
+      title: "Fun"
     },
     // {
     //   path: "/xerduo",
