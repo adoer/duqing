@@ -94,7 +94,7 @@ function MyApp({ Component, pageProps }) {
         <span className="separator">·</span>
         <a href="https://xerduo.com" target="_blank">xerduo.com</a>
         <small>
-          <time>2022</time>  © Du Qing.
+          <time>{new Date().getFullYear()}</time>  © Du Qing.
           <a href="./feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
         </small>
       </footer>
