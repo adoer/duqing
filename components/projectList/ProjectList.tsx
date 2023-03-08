@@ -11,4 +11,4 @@ const ProjectList = ({ data }) => {
     }
   </div>
 }
-export default ProjectList;
+export default ProjectList
