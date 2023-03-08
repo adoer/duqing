@@ -27,8 +27,8 @@ function MyApp({ Component, pageProps }) {
     //   title: "小耳朵"
     // },
     {
-      path: "/lab",
-      title: "Lab"
+      path: "/projects",
+      title: "Projects"
     },
     {
       path: "/about",
