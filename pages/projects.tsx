@@ -16,11 +16,11 @@ const Projects = function () {
       herf: 'https://tetris.duqing.ink',
       des: 'Tetris game with AI 🎮',
     },
-    {
-      title: 'BPM design editor',
-      herf: 'https://bpm.duqing.ink',
-      des: 'Design editor for BPM',
-    },
+    // {
+    //   title: 'BPM design editor',
+    //   herf: 'https://bpm.duqing.ink',
+    //   des: 'Design editor for BPM',
+    // },
     {
       title: 'Auto-i18n',
       herf: 'https://github.com/adoer/auto-i18n',

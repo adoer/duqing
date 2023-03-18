@@ -45,6 +45,7 @@ function MyApp({ Component, pageProps }) {
     let title = router.query.title
     if (!title) {
       // const obj = navRenderData.find(el => location.pathname === el.path)
+      // location 只能在 useEffect 获取
       title = location.pathname
       if (title === '/') {
         title = navRenderData[0].title
