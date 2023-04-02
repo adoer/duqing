@@ -94,6 +94,8 @@ function MyApp({ Component, pageProps }) {
         <a href="mailto:i@duqing.ink" target="_blank">i@duqing.ink</a>
         <span className="separator">·</span>
         <a href="https://xerduo.com" target="_blank">xerduo.com</a>
+        <span className="separator">·</span>
+        <a href="https://ichatt.cn" target="_blank">ichatt.cn</a>
         <small>
           <time>{new Date().getFullYear()}</time>  © Du Qing.
           <a href="./feed.xml" target="_blank" style={{ float: "right" }}>RSS</a>
