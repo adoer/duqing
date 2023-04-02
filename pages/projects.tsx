@@ -7,8 +7,8 @@ const Projects = function () {
       des: 'A blog base on Hexo',
     },
     {
-      title: 'ChatGPT',
-      herf: 'https://gpt.duqing.ink',
+      title: 'iChat',
+      herf: 'https://ichatt.cn',
       des: 'AI-powered chatbot',
     },
     {
